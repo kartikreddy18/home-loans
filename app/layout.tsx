@@ -1,6 +1,6 @@
 import { M_PLUS_Rounded_1c } from "@next/font/google";
 import Navbar from "./Navbar";
-const font = M_PLUS_Rounded_1c({ weight: "400" });
+const font = M_PLUS_Rounded_1c({ weight: "500" });
 import "./globals.css";
 
 export default function RootLayout({
@@ -16,7 +16,9 @@ export default function RootLayout({
         <meta name="description" content="Home Loans App" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${font.className} max-w-7xl mx-auto h-screen p-5`}>
+      <body
+        className={`${font.className} max-w-7xl mx-auto h-screen p-5 scrollbar-hide space-y-20`}
+      >
         <Navbar />
         {children}
       </body>
