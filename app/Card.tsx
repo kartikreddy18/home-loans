@@ -17,7 +17,7 @@ export const Card = ({
   color: string;
 }) => {
   return (
-    <div className="bg-white shadow-xl p-2 max-w-max grid place-items-center rounded cursor-pointer">
+    <div className="bg-white shadow-2xl p-2 max-w-max grid place-items-center rounded cursor-pointer">
       <div
         style={{
           backgroundColor: color,
