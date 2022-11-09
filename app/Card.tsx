@@ -24,7 +24,7 @@ export const Card = ({
         }}
         className="max-w-max p-5 rounded-full"
       >
-        <Icon className="w-6 h-6" />
+        <Icon className={`w-6 h-6 ${title === "Apply" && "-rotate-45"}`} />
       </div>
       <h1 className="font-semibold text-lg">{title}</h1>
       <p className="mx-auto text-center w-80">{description}</p>

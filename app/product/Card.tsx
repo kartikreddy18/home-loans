@@ -35,7 +35,7 @@ export const Card = ({
           />
         </div>
         <h1 className="font-semibold mx-auto text-center w-80">{name}</h1>
-        <div className="flex items-center justify-between gap-5 border-t p-1">
+        <div className="flex items-center justify-between gap-5 border-t p-1 font-semibold">
           <div className="grid place-items-center">
             <p>Advertised Rate</p>
             <p className="text-gray-400">{advertisedRate}%</p>

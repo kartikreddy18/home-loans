@@ -1,10 +1,11 @@
+import { notFound } from "next/navigation";
 import { ProductType } from "../../typings";
 import { CardList } from "./Card";
 import Footer from "./Footer";
 
 export const getData = async (pageId: string) => {
   const res = await fetch(
-    `https://api.ratecity.com.au/v2/home-loans?page=${pageId}`,
+    `https://api.ratecity.com.au/v2/home-loans?page=${pageId}`.toString(),
     {
       headers: {
         "Content-Type": "application/json",
@@ -45,6 +46,7 @@ export default async function Product({
 }: {
   searchParams: { pageId: string };
 }) {
+  if (!Number(pageId)) return notFound();
   const data = await getData(pageId);
   const { product, pageCount } = data;
   return (

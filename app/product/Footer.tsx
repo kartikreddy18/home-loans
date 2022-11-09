@@ -41,7 +41,7 @@ export const ApplyButton = ({ applyUrl }: { applyUrl: string }) => {
   const { push } = useRouter();
   return (
     <button
-      className="bg-blue-500 rounded-full p-5"
+      className="bg-blue-500 rounded-full p-5 -rotate-45"
       onClick={() => push(`https:${applyUrl}`)}
     >
       <PaperAirplaneIcon className="w-6 h-6" />
