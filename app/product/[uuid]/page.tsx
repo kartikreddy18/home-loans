@@ -4,7 +4,7 @@ import { ApplyButton } from "../Footer";
 import { CheckBadgeIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Faqs from "./Faqs";
 
-export const getData = async (uuid: string) => {
+const getData = async (uuid: string) => {
   const res = await fetch(
     `https://api.ratecity.com.au/v2/home-loans?uuid=${uuid}`.toString(),
     {

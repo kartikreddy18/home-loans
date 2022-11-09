@@ -3,7 +3,7 @@ import { ProductType } from "../../typings";
 import { CardList } from "./Card";
 import Footer from "./Footer";
 
-export const getData = async (pageId: string) => {
+const getData = async (pageId: string) => {
   const res = await fetch(
     `https://api.ratecity.com.au/v2/home-loans?page=${pageId}`.toString(),
     {
