@@ -5,6 +5,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { useRouter } from "next/navigation";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 export default function Footer({
   pageCount,
@@ -40,11 +41,11 @@ export default function Footer({
 export const ApplyButton = ({ applyUrl }: { applyUrl: string }) => {
   const { push } = useRouter();
   return (
-    <button
+    <Link
       className="bg-blue-500 rounded-full p-5 -rotate-45"
-      onClick={() => push(`https:${applyUrl}`)}
+      href={`https:${applyUrl}`}
     >
       <PaperAirplaneIcon className="w-6 h-6" />
-    </button>
+    </Link>
   );
 };
