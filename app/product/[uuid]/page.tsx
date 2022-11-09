@@ -12,6 +12,7 @@ const getData = async (uuid: string) => {
         "Content-Type": "application/json",
         "x-api-key": `${process.env.API_KEY}`,
       },
+      next: { revalidate: 60 },
     }
   );
   const data = await res.json();

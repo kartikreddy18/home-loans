@@ -11,7 +11,7 @@ const getData = async (pageId: string) => {
         "Content-Type": "application/json",
         "x-api-key": `${process.env.API_KEY}`,
       },
-      next: { revalidate: 60 },
+      cache: "no-store",
     }
   );
   const data = await res.json();
