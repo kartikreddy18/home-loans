@@ -5,9 +5,27 @@ import { ApplyButton } from "./Footer";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
 export const CardList = ({ product }: { product: ProductType[] }) => {
+  const data = product.reduce(
+    (prev: { [key: string]: ProductType }, current) => {
+      if (
+        !(
+          current.companyName in prev &&
+          current.advertisedRate > prev[current.companyName].advertisedRate
+        )
+      )
+        prev[current.companyName] = current;
+      return prev;
+    },
+    {}
+  );
+  const products = Object.entries(data)
+    .flatMap((value) => value)
+    .filter((value, index) => {
+      if (index % 2 !== 0) return value;
+    });
   return (
     <div className="grid place-items-center grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 -translate-y-10 pb-20">
-      {product.map((product, index) => (
+      {(products as ProductType[]).map((product, index) => (
         <Card key={index} {...product} />
       ))}
     </div>
@@ -21,6 +39,7 @@ export const Card = ({
   advertisedRate,
   companyLogo,
   applyUrl,
+  companyName,
 }: ProductType) => {
   return (
     <div className="bg-white shadow-xl p-2 grid place-items-center max-w-max gap-2 relative">

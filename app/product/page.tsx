@@ -21,6 +21,7 @@ const getData = async (pageId: string) => {
         ({
           uuid,
           name,
+          companyName,
           companyLogo,
           advertisedRate,
           comparisonRate,
@@ -33,6 +34,7 @@ const getData = async (pageId: string) => {
             advertisedRate,
             comparisonRate,
             applyUrl,
+            companyName
           };
         }
       ),
