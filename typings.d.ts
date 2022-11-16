@@ -5,6 +5,7 @@ export type ProductType = {
   advertisedRate: number;
   comparisonRate: number;
   applyUrl: string;
+  companyName: string;
 };
 
 type Faq = {
